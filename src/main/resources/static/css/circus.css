@@ -1,0 +1,16 @@
+
+.circusCard {
+	margin:7%;
+}
+
+
+@media screen and (min-width: 768px){
+   
+  	.circusCard{
+  		display:flex;
+  		align-items:center; 	
+    }
+   .circusCard{
+   margin:2%;
+   }
+}

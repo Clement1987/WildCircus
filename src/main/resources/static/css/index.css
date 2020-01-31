@@ -1,0 +1,27 @@
+.cardsIndexContainer {
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+.card{
+	padding:10px 5px 5px 5px;
+}
+
+@media screen and (min-width: 762px){
+    .containerIndexTown{
+        display:flex;
+  
+    }
+ 
+}
+
+@media screen and (min-width: 992px){
+    .containerIndexTown{
+        display:flex;
+  		padding:1%;
+  		
+    }
+    
+ 
+}

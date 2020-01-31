@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" href="/css/adminIndex.css">
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+
+<div class="content">
+		<div class="container my-5 col-12 col-xl-10 offset-1">
+			<h2 class="text-light" th:text="${wilder.id} ? 'Editer un circus' : 'Créer un circus'">Ajouter ou supprimer des wilders</h2>
+			<form method="post" th:action=@{/admin/wilders/update} th:object="${wilder}" class="my-5" >
+				<input name="id" th:field="*{id}" type="hidden">
+					<div class="form row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-name" class="text-light">prénom</label>
+						<input type="text" name="name" class="form-control" id="card-name" th:field="*{name}">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-firstname" class="text-light">Nom</label>
+						<input type="text" name="firstname" class="form-control" id="card-firstname" th:field="*{firstname}" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-content" class="text-light">Description</label>
+						<textarea rows="5" cols="10" name="content" class="form-control" id="card-content" th:field="*{content}" required></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-picture" class="text-light">Image</label>
+						<input type="text" name="picture" class="form-control" id="card-picture" th:field="*{picture}">
+					</div>
+				</div>
+				
+				<div class="d-flex justify-content-between align-items-center">
+					<input type="submit" th:value="${wilder.id} ? 'Modifier' : 'Créer'" class="btn btn-primary">
+					<a href="/admin/wilders"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

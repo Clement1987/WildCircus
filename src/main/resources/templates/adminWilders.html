@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+<link rel="stylesheet" href="/css/adminIndex.css">
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+<div class="content my-5 containerIndex">
+		<h2 class="offset-1 pt-4">Gérer votre troupe</h2>
+		<a class="btn my-2 offset-1" href="/admin/wilders/update"><i class="fas fa-plus"></i> Ajouter un Wilder</a>
+		<div class="divTitle container col-12 col-xl-10 d-flex py-2 border-bottom" >
+			<div class="col-2">
+				<p class="text-dark">n°</p>
+			</div>
+			<div class="col-2">
+				<p class="text-dark">Nom</p>
+			</div>
+			<div class="col-2">
+				<p class="text-dark">prénom</p>
+			</div>
+			<div class="col-2">
+				<p class="text-dark">descriptif</p>
+			</div>
+			<div class="col-4">
+				<p class="text-dark">Image</p>
+			</div>
+		</div>
+		<div class="divMessage container col-12 col-xl-10 d-flex py-2 border-bottom" th:each="wilder: ${wilder}" >
+			<div class="col- col-xl-2">
+				<p th:text="${wilder.id}">Numéro</p>
+			</div>
+			<div class="col-3 col-xl-2">
+				<p th:text="${wilder.name}">prénom</p>
+			</div>
+			<div class="col-3 col-xl-2">
+				<p th:text="${wilder.firstname}">Nom du cirque</p>
+			</div>
+			<div class="col-3 col-xl-2">
+				<p th:text="${wilder.content}">descriptif</p>
+			</div>
+			<div class="col-4 col-xl-4">
+				<img class="img-fluid " th:src="${wilder.picture}">
+			</div>
+			<div class="d-flex flex-column edit-icons">
+				<a  th:href="@{/admin/wilders/update(id=${wilder.id})}"><i class="fas fa-pen text-sucess"></i></a>
+				<a th:href="@{|/admin/wilders/delete${wilder.id}|}" onclick="return confirm('Etes vous sûr de vouloir supprimer ce circus ?')"><i class="fas fa-trash-alt text-danger"></i></a>
+			</div>
+		</div>
+		<a href="/admin" class="retourArriere text-light"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+	</div>
+
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

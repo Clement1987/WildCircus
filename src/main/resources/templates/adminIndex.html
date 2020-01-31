@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+<link rel="stylesheet" href="../css/adminIndex.css">
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+<div class="content my-5 containerIndex">
+		<h2 class="offset-1 pt-4">Gérer les circus</h2>
+		<a class="btn my-2 offset-1" href="/admin/index/update"><i class="fas fa-plus"></i> Ajouter un circus</a>
+		<div class="divTitle container col-12 col-xl-10 d-flex py-2 border-bottom" >
+			<div class="col-2">
+				<p class="text-dark">n°</p>
+			</div>
+			<div class="col-3">
+				<p class="text-dark">Ville</p>
+			</div>
+			<div class="col-3">
+				<p class="text-dark">Nom du cirque</p>
+			</div>
+			<div class="col-4">
+				<p class="text-dark">Image</p>
+			</div>
+		</div>
+		<div class="divMessage container col-12 col-xl-10 d-flex py-2 border-bottom" th:each="circus: ${circus}" >
+			<div class="col- col-xl-2">
+				<p th:text="${circus.id}">Numéro</p>
+			</div>
+			<div class="col-3 col-xl-3">
+				<p th:text="${circus.town}">Ville</p>
+			</div>
+			<div class="col-3 col-xl-3">
+				<p th:text="${circus.name}">Nom du cirque</p>
+			</div>
+			<div class="col-4 col-xl-4">
+				<img class="img-fluid adminIndexPicture " th:src="${circus.image}">
+			</div>
+			<div class="d-flex flex-column edit-icons">
+				<a th:href="@{/admin/index/update(id=${circus.id})}"><i class="fas fa-pen text-sucess"></i></a>
+				<a th:href="@{|/admin/index/delete${circus.id}|}" onclick="return confirm('Etes vous sûr de vouloir supprimer ce circus ?')"><i class="fas fa-trash-alt text-danger"></i></a>
+			</div>
+		</div>
+		<a href="/admin" class="retourArriere text-light"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+	</div>
+
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

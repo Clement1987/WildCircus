@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" href="/css/adminIndex.css">
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+
+<div class="content">
+		<div class="container my-5 col-12 col-xl-10 offset-1">
+			<h2  class="text-light" th:text="${article.id} ? 'Editer présentation circus' : 'Créer une présentation circus'">Créer/editer les présentation</h2>
+			<form method="post" th:action=@{/admin/presentation/update} th:object="${article}" class="my-5" >
+				<input name="id" th:field="*{id}" type="hidden">
+					<div class="form row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-circus" class="text-light">contenu présentation du cirque</label>
+						<textarea rows="8" cols="10" name="content_circus" class="form-control" id="card-circus" th:field="*{content_circus}" ></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-name" class="text-light">Nom du circus</label>
+						<input type="text" name="name" class="form-control" id="card-name" th:field="*{circus.name}" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-image" class="text-light">Image</label>
+						<input type="text" name="picture_circus" class="form-control" id="card-image" th:field="*{picture_circus}">
+					</div>
+				</div>
+				
+				<div class="d-flex justify-content-between align-items-center">
+					<input type="submit" th:value="${article.id} ? 'Modifier' : 'Créer'" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<div class="content">
+		<div class="container my-5 col-12 col-xl-10 offset-1">
+			<h2 class="text-light" th:text="${article.id} ? 'Editer présentation de ville' : 'Créer une présentation de ville'">Créer/editer les présentation</h2>
+			<form method="post" th:action=@{/admin/presentation/update} th:object="${article}" class="my-5" >
+				<input name="id" th:field="*{id}" type="hidden">
+					<div class="form row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-town" class="text-light">contenu présentation de la ville</label>
+						<textarea rows="8" cols="10" name="town" class="form-control" id="card-town" th:field="*{content_town}" ></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-name" class="text-light">Nom de la ville</label>
+						<input type="text" name="name" class="form-control" id="card-name" th:field="*{circus.town}" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-image" class="text-light">Image</label>
+						<input type="text" name="image" class="form-control" id="card-image" th:field="*{picture_town}">
+					</div>
+				</div>
+				
+				<div class="d-flex justify-content-between align-items-center">
+					<input type="submit" th:value="${article.id} ? 'Modifier' : 'Créer'" class="btn btn-primary">
+					<a href="/admin/presentation"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+
+<head th:fragment="head">
+	<meta charset="utf-8">
+	<title>Wild Circus une experience</title>
+	<meta content="Site du sublime Wild Circus, vos enfants et vous n'en reviendrais pas" name="description">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+	<link rel="stylesheet" href="/css/head.css">
+
+	
+</head>
+
+<body>
+	<header th:fragment="top" class="headHeader">
+		<nav class="navbar navbar-expand-lg text-light navbar-light">
+			<button class="navbar-toggler burger " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon "></span>
+			</button>
+			<div class="containerLogo">
+			<a class="navbar-brand text-light" href="/"><img alt="logo" src="https://cdn.pixabay.com/photo/2019/07/18/17/23/circus-4346896_960_720.png" class="logo"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+					
+					<li class="nav-item active">
+						<a class="nav-link headerLink text-light" href="/">Accueil</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerLink text-light" href="/circus">Nos cirques</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerLink text-light" href="/reservation">Reservation</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerLink text-light" href="/wilder">Notre troupe</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link headerLink text-light" href="/contact">Nous contacter</a>
+					</ul>
+					<div class="dropdown text-center">
+					<a class="btn btn-secondary dropdown-toggle text-center menuNavContainer" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="far fa-grin-stars text-center"></i>
+					 </a>
+					
+					<div class="dropdown-menu text-center menuNavDown" aria-labelledby="dropdownMenuLink">
+					  <a class="dropdown-item text-light" href="/admin">Panneau d'administration</a>
+					  <a class="dropdown-item text-light" href="#">Se déconnecter</a>
+					</div>
+				</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		
+		<footer th:fragment="down" class="text-center">
+			<nav>
+				<ul >
+					<li><a href="#" class="text-light">Nos cirques dans le monde</a></li>
+					<li><a href="#" class="text-light"> Reserver vos places</a></li>
+					<li><a href="#" class="text-light">Découvrir nos troupes</a></li>
+					<li><a href="#" class="text-light">Nous contacter</a></li>
+					<li><a href="#" class="text-light">Mention Légale</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+	
+	<div th:fragment="script">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	</div>
+	
+	</html>

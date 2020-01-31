@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/head.html :: head"></head>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header th:replace="fragment/head.html :: top"></header>
+  <h1 class="text-center">wild circus</h1>
+  <h3 class="text-center p-1 mt-3 mb-3"> Nous sommes présent près de chez vous</h3>
+  <div class="containerIndexTown text-center" id="topTitle">
+    <div class="container-fluid text-center cardsIndexContainer" th:each="circus : ${circus}"> 
+      <div class="card mt-4 ml-4  col-11 col-md-10 col-xl-12" >
+        <a th:href="|circus/${circus.id}|"><img th:src="${circus.image}" class="card-img-top" alt="..."></a>
+        <div class="card-body ">
+          <h3 th:text="${circus.town}"><a href="#">trolo</a></h3>
+          <p th:text="${circus.name}">trolo cirque</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer th:replace="fragment/head.html :: down"></footer>
+  
+</body>
+<div th:replace="fragment/head.html :: script"></div>
+</html>

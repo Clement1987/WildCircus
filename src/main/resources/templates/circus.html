@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+  <head th:replace="fragment/head.html :: head"></head>
+  <link rel="stylesheet" href="css/circus.css">
+</head>
+<body>
+  <header th:replace="fragment/head.html :: top"></header>
+  <h1 class="text-center">Nos circus</h1>
+  <div th:each="article :${article}" class="circusCard d-flex justify-content-around flex-wrap mt-5">
+    <div class="card mb-3 circusCard col-xl-7" >
+      <div class="row no-gutters circusCardContainer">
+        <div class="col-md-4" >
+          <img th:src="${article.picture_circus}" class="card-img" alt="circus picture">
+        </div>
+        <div class="col-md-8 circusCardContainer">
+          <div class="card-body">
+             <h5 class="card-title col-xl-12 text-center" th:text="${article.circus.name}">Card title</h5>
+            <p class="card-text text-justify" th:text="${article.content_circus}">texte</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3 circusCard col-xl-7)" >
+      <div class="row no-gutters d-flex flex-row-reverse circusCardContainer ">
+        <div class="col-md-4">
+          <img th:src="${article.picture_town}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8 ">
+          <div class="card-body">
+            <h5 class="card-title col-xl-12 text-center" th:text="${article.circus.town}">Card title</h5>
+            <p class="card-text"  th:text="${article.content_town}">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer th:replace="fragment/head.html :: down"></footer>
+  
+</body>
+<div th:replace="fragment/head.html :: script"></div>
+</html>

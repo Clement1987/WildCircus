@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+<link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" href="/css/adminIndex.css">
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+
+<div class="content">
+		<div class="container my-5 col-12 col-xl-10 offset-1">
+			<h2 th:text="${circus.id} ? 'Editer un circus' : 'Créer un circus'">Créer/editer les circus</h2>
+			<form method="post" th:action=@{/admin/index/update} th:object="${circus}" class="my-5" >
+				<input name="id" th:field="*{id}" type="hidden">
+					<div class="form row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-town">Ville</label>
+						<input type="text" name="town" class="form-control" id="card-town" th:field="*{town}">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-name">Nom du circus</label>
+						<input type="text" name="name" class="form-control" id="card-name" th:field="*{name}" required>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-10 col-xl-6">
+						<label for="card-image">Image</label>
+						<input type="text" name="image" class="form-control" id="card-image" th:field="*{image}">
+					</div>
+				</div>
+				
+				<div class="d-flex justify-content-between align-items-center">
+					<input type="submit" th:value="${circus.id} ? 'Modifier' : 'Créer'" class="btn btn-primary">
+					<a href="/admin/index"><i class="fas fa-arrow-left"></i> Retour en arrière</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

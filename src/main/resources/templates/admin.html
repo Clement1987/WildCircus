@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<head th:replace="fragment/headAdmin.html :: adminHead"></head>
+</head>
+
+
+<body>
+  <div class="container-fluid titleContainer">
+    <h1 class="text-center">Administration du Wild Circus</h1>
+</div>
+<section class="adminCard">
+  <div class="container-fluid text-center d-flex flex-row flex-wrap adminCardBorder"> 
+    <div class="card mt-4 ml-4  col-11 col-md-5 col-xl-2 adminCardContainer" >
+      <a href="admin/index"><img src="https://cdn.pixabay.com/photo/2017/08/22/17/04/pantomime-2669717__340.jpg" class="card-img-top" alt="..."></a>
+      <div class="card-body adminCardContent">
+        <h3><a href="/admin/index">Gestion des Circus</a></h3>
+      </div>
+    </div>
+    <div class="card mt-4 ml-4 col-11 col-md-5 col-xl-2 adminCardContainer">
+      <a href="#"><img src="https://cdn.pixabay.com/photo/2017/08/22/17/04/pantomime-2669717__340.jpg" class="card-img-top" alt="..."></a>
+      <div class="card-body adminCardContent">
+        <h3><a href="/admin/presentation">Gestion des présentations</a></h3>
+      </div>
+    </div>
+    <div class="card mt-4 ml-4 col-11 col-md-5 col-xl-2 adminCardContainer">
+      <a href="#"><img src="https://cdn.pixabay.com/photo/2017/08/22/17/04/pantomime-2669717__340.jpg" class="card-img-top" alt="..."></a>
+      <div class="card-body adminCardContent">
+        <h3><a href="/admin/wilders">Gestion des wilders</a></h3>
+      </div>
+    </div>
+    <div class="card mt-4 ml-4 col-11 col-md-5 col-xl-2 adminCardContainer">
+      <a href="#"><img src="https://cdn.pixabay.com/photo/2017/08/22/17/04/pantomime-2669717__340.jpg" class="card-img-top" alt="..."></a>
+      <div class="card-body adminCardContent">
+        <h3><a href="#">Gestion des messages</a></h3>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<div th:replace="fragment/headAdmin.html :: script"></div>
+</html>

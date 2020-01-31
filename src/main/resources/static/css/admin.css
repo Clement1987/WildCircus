@@ -1,0 +1,40 @@
+
+.titleContainer{
+    background-color: #404e7c;
+    padding:20px;
+    margin-bottom: 20px;
+    color:white;
+    font-weight:bold;
+}
+
+.titleContainer h1{
+    font-size: revert;
+}
+/*.adminCard,body{
+    background-color: #4C4556;
+}*/
+body{
+	background-color: #002642;
+}
+.adminCardContainer{
+    margin-top: 200px;
+    padding: initial;
+    width:25rem;
+}
+
+.adminCardContent a{
+    color: black;
+    text-decoration:none ;
+}
+
+.adminCardBorder{
+    padding-right: 39px;
+}
+@media screen and (min-width: 992px){
+    .adminCardBorder{
+        justify-content: space-around !important;
+    }
+    .adminCard{
+        margin-top: 200px;
+    }
+}

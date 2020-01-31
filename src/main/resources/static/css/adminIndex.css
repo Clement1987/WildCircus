@@ -1,0 +1,38 @@
+.divTitle {
+	background-color: ;
+	color: #fff;
+}
+
+.divMessage:nth-of-type(2n+1) {
+	background-color: #404e7c;
+	color:white;
+	align-items:center;
+}
+
+.divMessage:nth-of-type(2n) {
+	align-items:center;
+}
+
+i:hover {
+	color: #DC1432;
+}
+
+.adminIndexPicture {
+	max-height: 100px;
+	max-width: 250px;
+}
+
+.edit-icons {
+	position: absolute;
+	right: 10px;
+}
+.retourArriere {
+	position:absolute;
+	top:20px;
+	left:10px;
+}
+
+.containerIndex{
+	background-color:#e8d7f1;	
+	margin:0 90px 0 90px;
+}
